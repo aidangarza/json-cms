@@ -50,7 +50,10 @@
     }
 
     createOption({ value: '', name: 'Select a song'})
-    items.forEach(createOption)
+
+    items
+      .sort((a, b) => a.name > b.name ? 1 : -1)
+      .forEach(createOption)
 
     footer.appendChild(select)
   })()
